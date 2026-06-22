@@ -1,0 +1,152 @@
+body {
+  background-color: #f0f0f0;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ecran {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* LOGO ET IMG DE FIN */
+
+.logo {
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 0.5em;
+}
+
+.logo-petit {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 0.5em;
+}
+
+.img-gagne {
+  width: 100%;
+  max-width: 75%;
+  margin-bottom: 0.5em;
+}
+
+/* GRILLE ET CARTES */ 
+
+#grille {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 90vw;
+  max-width: 500px;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.carte {
+  width: 100%;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.carte-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.carte.flipped .carte-inner {
+  transform: rotateY(180deg);
+}
+
+.carte-front, .carte-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carte-front img,
+.carte-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carte-back {
+  transform: rotateY(180deg);
+}
+
+/* BUTTON */
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  font-size: 0;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#btn-jouer {
+  background-image: url('/start.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 150px;
+}
+
+#btn-rejouer-jeu, #btn-rejouer-fin {
+  background-image: url('/restart.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 150px;
+}
+
+/* ZONE SCORE ET CALCUL DU NOMBRE DE COUPS */ 
+
+.zone-score, .score-final {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 10px 0;
+  background: linear-gradient(141deg, rgba(255, 223, 186, 1) 0%, rgba(217, 199, 255, 1) 32%, rgba(255, 196, 239, 1) 73%, rgba(189, 255, 254, 1) 100%);
+  color :white ;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.zone-score span,
+.score-final span {
+  color : white;
+}
