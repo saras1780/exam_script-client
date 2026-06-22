@@ -50,10 +50,11 @@ let tableau = [];
 let cartesRetournees = [];
 let pairesTrouvees = 0;
 const pairesTotales = 8;
+
 let clicsTotaux = 0;
+
 let nombreDeCoups = 0;
 
-// NOUVELLES VARIABLES POUR LE TIMER
 let tempsEcoule = 0;
 let chronoInterval = null;
 
